@@ -1,0 +1,89 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.overlay.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.content {
+  text-align: center;
+}
+
+.counterWrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.counter {
+  font-family: 'Syne', sans-serif;
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+  animation: countPulse 0.1s ease-out;
+}
+
+@keyframes countPulse {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.percent {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-left: 0.25rem;
+}
+
+.progressBar {
+  width: 300px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-radius: 3px;
+  transition: width 0.05s linear;
+}
+
+.loadingText {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
